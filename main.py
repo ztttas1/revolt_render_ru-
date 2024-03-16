@@ -9,8 +9,8 @@ import time
 
 async def reconnect():
   while True:
-    requests.get("https://lian-tou-bot.ztttas11.repl.co/")
-    await asyncio.sleep(60)
+    requests.get("https://api.render.com/deploy/srv-cnqlbhn109ks73fcbbp0?key=5QJY5VfBmLs")
+    await asyncio.sleep(300)
 
 
 
