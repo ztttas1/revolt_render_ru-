@@ -10,7 +10,7 @@ import time
 async def reconnect():
   while True:
     
-    await asyncio.sleep(3600)
+    await asyncio.sleep(360)
     requests.get("https://api.render.com/deploy/srv-cnqlbhn109ks73fcbbp0?key=5QJY5VfBmLs")
 
 
