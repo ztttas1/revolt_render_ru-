@@ -27,7 +27,7 @@ class Client(revolt.Client):
     
       
     
-    if message.content == '.test':
+    if message.content == '.r':
       numbers = [random.randint(0, 9) for _ in range(3)]
 
       # 生成された乱数が全て同じかどうかチェック
