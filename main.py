@@ -17,7 +17,7 @@ async def reconnect():
 class Client(revolt.Client):
   
   async def on_ready(self):
-    print('Run  連投bot-revolt')
+    print('Run  ルーレットBOT')
     await reconnect()
   
 
