@@ -14,14 +14,7 @@ async def reconnect():
 
 
 
-class Client(revolt.Client):
-  
-  async def on_ready(self):
-    print('Run  ルーレットBOT')
-    await reconnect()
-  
-
-  async def on_message(self, message: revolt.Message):
+async def on_message(self, message: revolt.Message):
     
 
     
