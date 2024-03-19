@@ -5,14 +5,6 @@ import os
 import random
 import always_on
 
-
-
-async def reconnect():
-  while True:
-    requests.get("https://lian-tou-bot.ztttas11.repl.co/")
-    await asyncio.sleep(60)
-
-
 class Client(revolt.Client):
 
   async def on_ready(self):
@@ -29,6 +21,19 @@ class Client(revolt.Client):
 
       # 生成された乱数が全て同じかどうかチェック
       if numbers[0] == numbers[1] == numbers[2]:
+          # Revoltのチャンネルに"good"と送信
+          await message.channel.send(f"good! {numbers}")
+          print(f"{numbers} - YES")
+      else:
+          # 乱数が異なる場合は、その乱数を送信
+          await message.channel.send(f"Generated numbers: {numbers}")
+          print(f"{numbers} - NO")
+      
+      if message.content == '.h':
+      numbers = [random.randint(0, 9) for _ in range(10)]
+
+      # 生成された乱数が全て同じかどうかチェック
+      if numbers[0] == numbers[1] == numbers[2] == numbers[3] == numbers[4] == numbers[5] == numbers[6] == numbers[7] == numbers[8] == numbers[9]:
           # Revoltのチャンネルに"good"と送信
           await message.channel.send(f"good! {numbers}")
           print(f"{numbers} - YES")
