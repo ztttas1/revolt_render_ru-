@@ -29,7 +29,7 @@ class Client(revolt.Client):
           await message.channel.send(f"Generated numbers: {numbers}")
           print(f"{numbers} - NO")
       
-    if message.content == '.h':
+    if message.content == '.g':
       numbers = [random.randint(0, 9) for _ in range(10)]
 
       # 生成された乱数が全て同じかどうかチェック
