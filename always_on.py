@@ -1,11 +1,17 @@
 from flask import Flask
 from threading import Thread
 
-app = Flask(__name__)
+app = Flask('')
 
 @app.route('/')
 def serve_log_file():
     return send_from_directory('.', 'roulette_log.txt')
 
-if __name__ == "__main__":
-    app.run(port=8000)
+
+def run():
+  app.run(host="0.0.0.0", port=8080)
+
+
+def activate():
+  server = Thread(target=run)
+  server.start()
