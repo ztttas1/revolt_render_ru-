@@ -28,7 +28,9 @@ class Client(revolt.Client):
           # 乱数が異なる場合は、その乱数を送信
           await message.channel.send(f"Generated numbers: {numbers}")
           print(f"{numbers} - NO")
-      
+
+      with open('roulette_log.txt', 'a') as f:
+        f.write(f'User ID: {user_id}, Numbers: {numbers}\n')
     if message.content == '.g':
       numbers = [random.randint(0, 9) for _ in range(10)]
 
@@ -41,7 +43,9 @@ class Client(revolt.Client):
           # 乱数が異なる場合は、その乱数を送信
           await message.channel.send(f"Generated numbers: {numbers}")
           print(f"{numbers} - NO")
-    
+      
+      with open('roulette_log.txt', 'a') as f:
+        f.write(f'User ID: {user_id}, Numbers: {numbers}\n')
     
 
 
