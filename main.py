@@ -11,12 +11,7 @@ class Client(revolt.Client):
     print('Run  ルーレットBOT')
     await reconnect()
   async def on_message(self, message: revolt.Message):
-    if message.content.startswith('yd '):
-          # 'yd 'の後に続く文字列を抽出
-          specific_string = message.content[3:]
-          url = requests.get(r'https://tanjoubimadeatosukosidayo-nc5r.onrender.com/watch?v={specific_string}').text.rstrip()
-          # 抽出した文字列を同じチャンネルに送信
-          await message.channel.send(url)
+    
 
     
       
