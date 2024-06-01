@@ -56,3 +56,10 @@ async def main():
     await client.start()
     
 
+
+
+
+
+always_on.activate()
+
+asyncio.run(main())
