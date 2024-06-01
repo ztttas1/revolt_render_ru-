@@ -3,9 +3,10 @@ from threading import Thread
 
 app = Flask('')
 
+
 @app.route('/')
-def serve_log_file():
-    return send_from_directory('.', 'roulette_log.txt')
+def main():
+  return 'temp'
 
 
 def run():
