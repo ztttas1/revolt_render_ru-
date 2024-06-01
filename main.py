@@ -9,7 +9,7 @@ class Client(revolt.Client):
 
   async def on_ready(self):
     print('Run  ルーレットBOT')
-    await reconnect()
+    
   async def on_message(self, message: revolt.Message):
     
 
@@ -29,8 +29,7 @@ class Client(revolt.Client):
           await message.channel.send(f"Generated numbers: {numbers}")
           print(f"{numbers} - NO")
 
-      with open('roulette_log.txt', 'a') as f:
-        f.write(f'User ID: {user_id}, Numbers: {numbers}\n')
+      
     if message.content == '.g':
       numbers = [random.randint(0, 9) for _ in range(10)]
 
@@ -44,15 +43,14 @@ class Client(revolt.Client):
           await message.channel.send(f"Generated numbers: {numbers}")
           print(f"{numbers} - NO")
       
-      with open('roulette_log.txt', 'a') as f:
-        f.write(f'User ID: {user_id}, Numbers: {numbers}\n')
+      
     
 
 
 
 async def main():
   async with revolt.utils.client_session() as session:
-    client = Client(session, os.environ['Revolt-TOKEN'])
+    client = Client(session, os.environ['R'])
     await client.start()
     
 
