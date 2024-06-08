@@ -6,14 +6,19 @@ import random
 import always_on
 
 class Client(revolt.Client):
+  async def on_ready(self):
+        # ボットが参加しているサーバーのリストを取得
+        guilds = self.servers
 
+        # サーバーの数を表示
+        print(f"ボットが参加しているサーバー数: {len(guilds)}")
+
+        # ボットを終了
+        await self.edit_status(text="Used in{len(guilds)} servers")
   async def on_ready(self):
     print('Run  ルーレットBOT')
     
   async def on_message(self, message: revolt.Message):
-    guilds = self.servers
-    status = f"Used in{guilds} servers"
-    await self.edit_status(text=status)
     
       
     
