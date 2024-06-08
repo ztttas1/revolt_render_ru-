@@ -12,7 +12,7 @@ class Client(revolt.Client):
     
   async def on_message(self, message: revolt.Message):
     guilds = self.servers
-    await self.edit_status(text=" Used in {len(guilds)} servers")
+    await self.edit_status(text=r" Used in {len(guilds)} servers")
     
       
     
