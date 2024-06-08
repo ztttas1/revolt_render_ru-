@@ -14,7 +14,7 @@ class Client(revolt.Client):
         print(f"ボットが参加しているサーバー数: {len(guilds)}")
 
         # ボットを終了
-        await self.edit_status(text="Used in{len(guilds)} servers")
+        await self.edit_status(text=f"Used in{len(guilds)} servers")
   async def on_ready(self):
     print('Run  ルーレットBOT')
     
