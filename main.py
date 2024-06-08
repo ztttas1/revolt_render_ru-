@@ -67,3 +67,26 @@ async def main():
 always_on.activate()
 
 asyncio.run(main())
+
+import revolt
+import aiohttp
+import asyncio
+
+class MyBot(revolt.Client):
+    async def on_ready(self):
+        # ボットが参加しているサーバーのリストを取得
+        guilds = self.servers
+
+        # サーバーの数を表示
+        print(f"ボットが参加しているサーバー数: {len(guilds)}")
+
+        # ボットを終了
+        await self.edit_status(text=f"Used in{len(guilds)} servers")
+
+async def main():
+    token = os.environ['R']
+    async with aiohttp.ClientSession() as session:
+        bot = MyBot(session, token)
+        await bot.start()
+
+asyncio.run(main())
