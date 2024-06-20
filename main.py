@@ -12,6 +12,14 @@ class Client(revolt.Client):
     
   async def on_message(self, message: revolt.Message):
     guilds = self.servers
+    await self.edit_status(text=f".r | Used in {len(guilds)} servers!")
+class Client(revolt.Client):
+  
+  async def on_ready(self):
+    print('Run  ルーレットBOT')
+    
+  async def on_message(self, message: revolt.Message):
+    guilds = self.servers
       
     
     if message.content == '.r':
