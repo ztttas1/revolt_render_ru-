@@ -9,22 +9,15 @@ class Client(revolt.Client):
   
   async def on_ready(self):
     print('Run  ルーレットBOT')
-    
-  async def on_message(self, message: revolt.Message):
     guilds = self.servers
     await self.edit_status(text=f".r | Used in {len(guilds)} servers!")
-class Client(revolt.Client):
-  
-  async def on_ready(self):
-    print('Run  ルーレットBOT')
-    
   async def on_message(self, message: revolt.Message):
     guilds = self.servers
       
     
     if message.content == '.r':
       numbers = [random.randint(0, 9) for _ in range(3)]
-      await self.edit_status(text=f".r | Used in {len(guilds)} servers")
+      await self.edit_status(text=f".r | Used in {len(guilds)} servers!")
       # 生成された乱数が全て同じかどうかチェック
       if numbers[0] == numbers[1] == numbers[2]:
           # Revoltのチャンネルに"good"と送信
