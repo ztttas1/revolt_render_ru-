@@ -34,11 +34,11 @@ class Client(revolt.Client):
       # 生成された乱数が全て同じかどうかチェック
       if numbers[0] == numbers[1] == numbers[2] == numbers[3] == numbers[4] == numbers[5] == numbers[6] == numbers[7] == numbers[8] == numbers[9]:
           # Revoltのチャンネルに"good"と送信
-          await message.channel.send(f"good! {numbers}")
+          await message.channel.send(f"> Good! \n > Generated numbers: {numbers}")
           print(f"{numbers} - YES")
       else:
           # 乱数が異なる場合は、その乱数を送信
-          await message.channel.send(f"Generated numbers: {numbers}")
+          await message.channel.send(f"> Generated numbers: {numbers}")
           print(f"{numbers} - NO")
       
       
