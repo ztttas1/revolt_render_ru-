@@ -20,11 +20,11 @@ class Client(revolt.Client):
       # 生成された乱数が全て同じかどうかチェック
       if numbers[0] == numbers[1] == numbers[2]:
           # Revoltのチャンネルに"good"と送信
-          await message.channel.send(f"> Good! \n > Generated numbers: {numbers}")
+          await MessageReply(f"> Good! \n > Generated numbers: {numbers}")
           print(f"{numbers} - YES")
       else:
           # 乱数が異なる場合は、その乱数を送信
-          await message.channel.send(f"> Generated numbers: {numbers}")
+          await MessageReply(f"> Generated numbers: {numbers}")
           print(f"{numbers} - NO")
       await self.edit_status(text=f".r | Used in {len(guilds)} servers!")
       
