@@ -20,11 +20,11 @@ class Client(revolt.Client):
       # 生成された乱数が全て同じかどうかチェック
       if numbers[0] == numbers[1] == numbers[2]:
           # Revoltのチャンネルに"good"と送信
-          await MessageReply(f"> Good! \n > Generated numbers: {numbers}")
+          await message.channel.send(f"> Good! \n > Generated numbers: {numbers}")
           print(f"{numbers} - YES")
       else:
           # 乱数が異なる場合は、その乱数を送信
-          await MessageReply(f"> Generated numbers: {numbers}")
+          await message.channel.send(f"> Generated numbers: {numbers}")
           print(f"{numbers} - NO")
       await self.edit_status(text=f".r | Used in {len(guilds)} servers!")
       
@@ -40,6 +40,9 @@ class Client(revolt.Client):
           # 乱数が異なる場合は、その乱数を送信
           await message.channel.send(f"> Generated numbers: {numbers}")
           print(f"{numbers} - NO")
+      if message.content == '.help':
+        await message.channel.send(f"> ##  Rouletto\n > ### You can play roulette\n > Normal mode:$ .r $ \n > Hard mode:$ .g $ \n Help:$ .help $\n ##### Management:<@01HJQHPJKEERVFMY165QGVF6DC> | <@01HS541Y8H5TQMWVEQD2VK213M>")
+        
       
       
     
