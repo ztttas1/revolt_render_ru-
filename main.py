@@ -26,7 +26,7 @@ class Client(revolt.Client):
           # 乱数が異なる場合は、その乱数を送信
           await message.channel.send(f"> Generated numbers: {numbers}")
           print(f"{numbers} - NO")
-      await self.edit_status(text=f".r | Used in {len(guilds)} servers!")
+      await self.edit_status(text=f".help | Used in {len(guilds)} servers!")
       
     if message.content == '.g':
       numbers = [random.randint(0, 9) for _ in range(10)]
