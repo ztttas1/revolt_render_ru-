@@ -63,7 +63,6 @@ async def main():
   async with revolt.utils.client_session() as session:
     client = Client(session, os.environ['R'])
     await client.start()
-    await self.edit_status(text=f".help | Used in {len(guilds)} servers!")
 
 
 
