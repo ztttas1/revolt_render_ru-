@@ -40,7 +40,7 @@ class Client(revolt.Client):
           await message.channel.send(f"> Generated numbers: {numbers}")
           print(f"{numbers} - NO")
     if message.content == '.c':
-      colorsR = [random.sample(colors, 1) for _ in range(3)]
+      colorsR = [random.sample(colors, 3)]
       # 生成された乱数が全て同じかどうかチェック
       if colorsR[0] == colorsR[1] == colorsR[2]:
           # Revoltのチャンネルに"good"と送信
