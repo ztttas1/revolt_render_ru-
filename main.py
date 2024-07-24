@@ -54,8 +54,6 @@ class Client(revolt.Client):
     if message.content == '.help':
         await message.channel.send(f"> ##  **Rouletto**\n > ### ***You can play roulette***\n > Normal mode:`.r`  \n > Hard mode:`.g` \n > Colors mode:`.c`\n> Help:`.help` \n> Bot info:`.info`\n > ##### [Invite](https://app.revolt.chat/bot/01HS541Y8H5TQMWVEQD2VK213M) |  [Vote for the bot and support it!](https://revoltbots.org/bots/01HS541Y8H5TQMWVEQD2VK213M/vote)\n> ##### Management:<@01HJQHPJKEERVFMY165QGVF6DC> | <@01HS541Y8H5TQMWVEQD2VK213M>")
     if message.content == '.info':
-        cpu_usage = psutil.cpu_percent(interval=interval)
-        ram_usage = memory_info.percent
         await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers\n> CPU utilization:{cpu_usage}\n> RAM utilization:{ram_usage}") 
       
       
