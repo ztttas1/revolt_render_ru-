@@ -6,6 +6,27 @@ import random
 import always_on
 
 colors = ["🟥", "🟧", "🟨", "🟩", "🟦", "🟪", "⬛", "⬜"]
+
+
+api_url = 'https://revoltbots.org/api/v1/bots/{bot_id}/stats'
+api_token = 'DWXU5PU0n3F1TOGYGqjN'
+
+headers = {
+    'Authorization': f'Bot {api_token}',
+    'Content-Type': 'application/json'
+}
+def send_server_count(server_count):
+    payload = {
+        'server_count': server_count
+    }
+    response = requests.post(api_url.format(bot_id=bot_id), headers=headers, json=payload)
+    if response.status_code == 200:
+        print("Server count successfully sent.")
+    else:
+        print(f"Error: {response.status_code} - {response.text}")
+
+
+
 class Client(revolt.Client):
   
   async def on_ready(self):
