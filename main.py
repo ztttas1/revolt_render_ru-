@@ -21,9 +21,9 @@ def send_server_count(server_count):
     }
     response = requests.post(api_url.format(bot_id=bot_id), headers=headers, json=payload)
     if response.status_code == 200:
-        print("Server count successfully sent.")
+        await message.channel.send(f"Server count successfully sent.") 
     else:
-        print(f"Error: {response.status_code} - {response.text}")
+        await message.channel.send(f"Error: {response.status_code} - {response.text}") 
 
 
 
@@ -75,8 +75,11 @@ class Client(revolt.Client):
     if message.content == '.help':
         await message.channel.send(f"> ##  **Rouletto**\n > ### ***You can play roulette***\n > Normal mode:`.r`  \n > Hard mode:`.g` \n > Colors mode:`.c`\n> Help:`.help` \n> Bot info:`.info`\n > ##### [Invite](https://app.revolt.chat/bot/01HS541Y8H5TQMWVEQD2VK213M) |  [Vote for the bot and support it!](https://revoltbots.org/bots/01HS541Y8H5TQMWVEQD2VK213M/vote)\n> ##### Management:<@01HJQHPJKEERVFMY165QGVF6DC> | <@01HS541Y8H5TQMWVEQD2VK213M>")
     if message.content == '.info':
-        await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers\n> CPU utilization:{cpu_usage}\n> RAM utilization:{ram_usage}") 
-      
+        await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers") 
+    if message.content == '.post':
+        server_count = f"{len(guilds)}"
+        send_server_count(server_count)
+
       
     
 
