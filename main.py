@@ -4,7 +4,7 @@ import asyncio
 import os
 import random
 import always_on
-import psutil
+
 colors = ["🟥", "🟧", "🟨", "🟩", "🟦", "🟪", "⬛", "⬜"]
 class Client(revolt.Client):
   
