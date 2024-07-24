@@ -20,10 +20,6 @@ def send_server_count(server_count):
         'server_count': server_count
     }
     response = requests.post(api_url.format(bot_id=bot_id), headers=headers, json=payload)
-    if response.status_code == 200:
-        await message.channel.send(f"Server count successfully sent.") 
-    else:
-        await message.channel.send(f"Error: {response.status_code} - {response.text}") 
 
 
 
@@ -79,7 +75,7 @@ class Client(revolt.Client):
     if message.content == '.post':
         server_count = f"{len(guilds)}"
         send_server_count(server_count)
-
+        await message.channel.send(f"Status code: {response.status_code}") 
       
     
 
