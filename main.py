@@ -19,7 +19,7 @@ def send_server_count(server_count):
     payload = {
         'server_count': server_count
     }
-    response = requests.post(api_url.format(bot_id=bot_id), headers=headers, json=payload)
+    response = requests.post(headers=headers, json=payload)
 
 
 
