@@ -24,13 +24,6 @@ def send_server_count(server_count):
 
 
 class Client(revolt.Client):
-  async def on_ready(self):
-        print(f'Logged in as {self.user.name}')
-        statuses = [f".help | Used in {self.servers} servers!", f".r | Used in {self.servers} servers!", f".g | Used in {self.servers} servers!",f".c | Used in {self.servers} servers!"]
-        while True:
-            for status in statuses:
-                await self.edit_status(text=status)
-                await asyncio.sleep(3)
   async def on_message(self, message: revolt.Message):
     guilds = self.servers
       
