@@ -29,8 +29,9 @@ class Client(revolt.Client):
         statuses = [f".help | Used in {len(guilds)} servers!", f".r | Used in {len(guilds)} servers!", f".g | Used in {len(guilds)} servers!",f".c | Used in {len(guilds)} servers!"]
         while True:
             for status in statuses:
+                guilds = self.servers
                 await self.edit_status(text=status)
-                await asyncio.sleep(10)
+                await asyncio.sleep(3)
   async def on_message(self, message: revolt.Message):
     guilds = self.servers
       
