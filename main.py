@@ -29,8 +29,10 @@ class Client(revolt.Client):
         statuses = [f".help | Used in {len(guilds)} servers!", f".r | Used in {len(guilds)} servers!", f".g | Used in {len(guilds)} servers!",f".c | Used in {len(guilds)} servers!"]
         while True:
             for status in statuses:
+                print("0")
                 await self.edit_status(text=status)
-                await asyncio.sleep(10)
+                await asyncio.sleep(3)
+                print("1")
   async def on_ready(self):
     print('Run  ルーレットBOT')
     
