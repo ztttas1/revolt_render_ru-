@@ -25,7 +25,7 @@ def send_server_count(server_count):
 
 class Client(revolt.Client):
   async def on_ready(self):
-        print(f'Logged in as {self.user.name}')
+    print(f'Logged in as {self.user.name}')
         statuses = [f".help | Used in {len(guilds)} servers!", f".r | Used in {len(guilds)} servers!", f".g | Used in {len(guilds)} servers!",f".c | Used in {len(guilds)} servers!"]
         while True:
             for status in statuses:
@@ -33,9 +33,6 @@ class Client(revolt.Client):
                 await self.edit_status(text=status)
                 await asyncio.sleep(3)
                 print("1")
-  async def on_ready(self):
-    print('Run  ルーレットBOT')
-    
   async def on_message(self, message: revolt.Message):
     guilds = self.servers
       
