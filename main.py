@@ -26,7 +26,8 @@ def send_server_count(server_count):
 class Client(revolt.Client):
   async def on_ready(self):
         print(f'Logged in as {self.user.name}')
-        statuses = [f".help | Used in {guilds} servers!", f".r | Used in {len(guilds)} servers!", f".g | Used in {guilds} servers!",f".c | Used in {guilds} servers!"]
+        guilds = self.servers
+        statuses = [f".help | Used in {guilds} servers!", f".r | Used in {guilds} servers!", f".g | Used in {guilds} servers!",f".c | Used in {guilds} servers!"]
         while True:
             for status in statuses:
                 guilds = self.servers
