@@ -8,18 +8,22 @@ import always_on
 colors = ["🟥", "🟧", "🟨", "🟩", "🟦", "🟪", "⬛", "⬜"]
 
 
-api_url = 'https://revoltbots.org/api/v1/bots/{bot_id}/stats'
-api_token = 'DWXU5PU0n3F1TOGYGqjN'
 
+
+
+# 送信先のURL
+url = 'https://revoltbots.org/api/v1/bots/stats'
+
+# POSTリクエストのヘッダー
 headers = {
-    'Authorization': f'Bot {api_token}',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
 }
-def send_server_count(server_count):
-    payload = {
-        'server_count': server_count
-    }
-    response = requests.post(headers=headers, json=payload)
+
+# POSTリクエストのデータ
+data = {
+    'authorization': 'DWXU5PU0n3F1TOGYGqjN',
+    'servers': self.servers
+}
 
 
 
@@ -69,8 +73,7 @@ class Client(revolt.Client):
     if message.content == '.info':
         await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers") 
     if message.content == '.post':
-        server_count = f"{len(guilds)}"
-        send_server_count(server_count)
+        response = requests.post(url, headers=headers, json=data)
         await message.channel.send(f"Status code: {response.status_code}") 
       
     
