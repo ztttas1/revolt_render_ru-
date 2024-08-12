@@ -9,24 +9,6 @@ colors = ["🟥", "🟧", "🟨", "🟩", "🟦", "🟪", "⬛", "⬜"]
 
 
 
-
-
-# 送信先のURL
-url = 'https://revoltbots.org/api/v1/bots/stats'
-
-# POSTリクエストのヘッダー
-headers = {
-    'Content-Type': 'application/json',
-}
-
-# POSTリクエストのデータ
-data = {
-    'authorization': 'DWXU5PU0n3F1TOGYGqjN',
-    'servers': self.servers
-}
-
-
-
 class Client(revolt.Client):
   async def on_message(self, message: revolt.Message):
     guilds = self.servers
@@ -72,9 +54,6 @@ class Client(revolt.Client):
         await message.channel.send(f"> ##  **Rouletto**\n > ### ***You can play roulette***\n > Normal mode:`.r`  \n > Hard mode:`.g` \n > Colors mode:`.c`\n> Help:`.help` \n> Bot info:`.info`\n > ##### [Invite](https://app.revolt.chat/bot/01HS541Y8H5TQMWVEQD2VK213M) |  [Vote for the bot and support it!](https://revoltbots.org/bots/01HS541Y8H5TQMWVEQD2VK213M/vote)\n> ##### Management:<@01HJQHPJKEERVFMY165QGVF6DC> | <@01HS541Y8H5TQMWVEQD2VK213M>")
     if message.content == '.info':
         await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers") 
-    if message.content == '.post':
-        response = requests.post(url, headers=headers, json=data)
-        await message.channel.send(f"Status code: {response.status_code}") 
       
     
 
