@@ -50,7 +50,7 @@ class Client(revolt.Client):
           print(f"{colorsR} - YES")
       else:
           # 乱数が異なる場合は、その乱数を送信
-          await message.channel.send(f"> Generated colors: {colorsR}\n> User:user_name")
+          await message.channel.send(f"> Generated colors: {colorsR}\n> User:{user_name}")
           print(f"{colorsR} - NO")
     if message.content == '.help':
         await message.channel.send(f"> ##  **Rouletto**\n > ### ***You can play roulette***\n > Normal mode:`.r`  \n > Hard mode:`.g` \n > Colors mode:`.c`\n> Help:`.help` \n> Bot info:`.info`\n > ##### [Invite](https://app.revolt.chat/bot/01HS541Y8H5TQMWVEQD2VK213M) |  [Vote for the bot and support it!](https://revoltbots.org/bots/01HS541Y8H5TQMWVEQD2VK213M/vote)\n> ##### Management:<@01HJQHPJKEERVFMY165QGVF6DC> | <@01HS541Y8H5TQMWVEQD2VK213M>")
