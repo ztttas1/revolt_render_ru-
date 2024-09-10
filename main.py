@@ -57,6 +57,7 @@ class Client(revolt.Client):
         ]
         status = random.choice(statuses)  # ランダムなステータスを選択
         await self.edit_status(text=status)
+        print(1)
         await asyncio.sleep(30)  # 30秒ごとにステータスを更新
 
 
