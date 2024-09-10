@@ -45,8 +45,8 @@ class Client(revolt.Client):
         
         if message.content == '.info':
             await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers")
-
-    async def update_status(self, message: revolt.Message):
+class Client2(revolt.Client):
+    async def on_message(self, message: revolt.Message):
      while True:
         # guildsを更新
         guilds = self.servers  # サーバーの数を取得
@@ -64,7 +64,9 @@ class Client(revolt.Client):
 async def main():
     async with revolt.utils.client_session() as session:
         client = Client(session, os.environ['R'])
+        client2 = Client2(session, os.environ['R'])
         await client.start()
+        await client2.start()
 
 always_on.activate()
 
