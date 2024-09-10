@@ -47,18 +47,12 @@ class Client(revolt.Client):
             await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers")
 class Client2(revolt.Client):
     async def on_message(self, message: revolt.Message):
-     while True:
-        # guildsを更新
-        guilds = self.servers  # サーバーの数を取得
-        statuses = [
-            f".help | Used in {guilds} servers!",
-            f".r | Used in {guilds} servers!",
-            f".g | Used in {guilds} servers!"
-        ]
-        status = random.choice(statuses)  # ランダムなステータスを選択
-        await self.edit_status(text=status)
-        print(1)
-        await asyncio.sleep(30)  # 30秒ごとにステータスを更新
+     guilds = self.servers  # サーバーの数を取得
+     statuses = [f".help | Used in {guilds} servers!",f".r | Used in {guilds} servers!",f".g | Used in {guilds} servers!"]
+     status = random.choice(statuses)  # ランダムなステータスを選択
+     await self.edit_status(text=status)
+     print("1")
+     await asyncio.sleep(30)  # 30秒ごとにステータスを更新
 
 
 async def main():
