@@ -63,7 +63,6 @@ class Client(revolt.Client):
 async def main():
     async with revolt.utils.client_session() as session:
         client = Client(session, os.environ['R'])
-        asyncio.create_task(client.update_status())  # ステータス更新タスクを開始
         await client.start()
 
 always_on.activate()
