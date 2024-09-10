@@ -46,7 +46,7 @@ class Client(revolt.Client):
         if message.content == '.info':
             await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers")
 
-    async def update_status(self):
+    async def update_status(self, message: revolt.Message):
      while True:
         # guildsを更新
         guilds = self.servers  # サーバーの数を取得
