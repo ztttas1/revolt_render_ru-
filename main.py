@@ -9,7 +9,6 @@ colors = ["🟥", "🟧", "🟨", "🟩", "🟦", "🟪", "⬛", "⬜"]
 
 class Client(revolt.Client):
     async def on_message(self, message: revolt.Message):
-        guilds = self.servers
 
         if message.content == '.r':
             numbers = [random.randint(0, 9) for _ in range(3)]
@@ -49,14 +48,15 @@ class Client(revolt.Client):
 
     async def update_status(self):
         statuses = [
-            f".help | Used in {len(self.servers)} servers!",
-            f".r | Used in {len(self.servers)} servers!",
-            f".g | Used in {len(self.servers)} servers!"
+            f".help | Used in {len(guilds)} servers!",
+            f".r | Used in {len(guilds)} servers!",
+            f".g | Used in {len(guilds)} servers!"
         ]
         while True:
+            guilds = self.servers
             status = random.choice(statuses).format(len=self.servers)
             await self.edit_status(text=status)
-            await asyncio.sleep(60)  # 60秒ごとにステータスを更新
+            await asyncio.sleep(30)  # 60秒ごとにステータスを更新
 
 async def main():
     async with revolt.utils.client_session() as session:
