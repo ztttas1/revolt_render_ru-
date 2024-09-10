@@ -47,10 +47,11 @@ class Client(revolt.Client):
             await message.channel.send(f"> # Roulette Bot info\n> Used in {len(guilds)} servers")
 
     async def update_status(self):
+        guilds = self.servers
         statuses = [
-            f".help | Used in {len(guilds)} servers!",
-            f".r | Used in {len(guilds)} servers!",
-            f".g | Used in {len(guilds)} servers!"
+            f".help | Used in {guilds} servers!",
+            f".r | Used in {guilds} servers!",
+            f".g | Used in {guilds} servers!"
         ]
         while True:
             guilds = self.servers
