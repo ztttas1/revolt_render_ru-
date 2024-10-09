@@ -73,5 +73,6 @@ always_on.activate()
 
 asyncio.run(main())
 while True:
- bottookosu = requests.get(urls)
+ botto = requests.get(urls)
+ print(botto)
  time.sleep(10)
