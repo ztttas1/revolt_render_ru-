@@ -6,7 +6,7 @@ import random
 import always_on
 
 colors = ["🟥", "🟧", "🟨", "🟩", "🟦", "🟪", "⬛", "⬜"]
-urls = os.environ['URL']
+
 
 
 class Client(revolt.Client):
@@ -72,7 +72,8 @@ async def main():
 always_on.activate()
 
 asyncio.run(main())
-while True:
- botto = requests.get(urls)
- print(botto)
- time.sleep(10)
+#urls = os.environ['URL']
+#while True:
+ #botto = requests.get(urls)
+ #print(botto)
+ #time.sleep(10)
